@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>WunderLab</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1" />
+<meta name="Author" content="WunderLab" />
+<meta name="Keywords" content="WunderLab" />
+<meta name="Description" content="WunderLab" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<script>
+if (window.top!==window.self) window.top.location=window.self.location;
+</script>
+<style>
+html, body, div, span, h1, h2, p, a, img, strong, b, u, i, center, ul, li,
+form, label, table, tbody, thead, tr, th, td  {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: 0 !important;
+  box-sizing: border-box;
+}
+img
+{
+  vertical-align: middle;
+  max-width: 100%;
+}
+html { height:100%; background:#000; }
+
+body {
+  background-color: #000;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  width: 400px;
+  height: 400px;
+}
+.container .text-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.container .text {
+  position: absolute;
+  top: 50%;
+  font-size: 12rem;
+  font-family: "Bebas Neue";
+  font-weight: bold;
+  -webkit-text-stroke: 2px #161618;
+  letter-spacing: 4px;
+  user-select: none;
+  pointer-events: none;
+}
+.container .text-container {
+  z-index: 1;
+}
+.container .text-container .text:nth-child(1) {
+  opacity: 0;
+  left: 42.5%;
+  transform: translate(-50%, -50%);
+  animation: upDown 2000ms ease-in-out infinite;
+  animation-delay: calc(0s + (0.1s * 1));
+  z-index: -1;
+}
+.container .text-container .text:nth-child(2) {
+  opacity: 0;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  animation: upDown 2000ms ease-in-out infinite;
+  animation-delay: calc(0s + (0.1s * 2));
+  z-index: -2;
+}
+.container .text-container .text:nth-child(3) {
+  opacity: 0;
+  left: 47.5%;
+  transform: translate(-50%, -50%);
+  animation: upDown 2000ms ease-in-out infinite;
+  animation-delay: calc(0s + (0.1s * 3));
+  z-index: -3;
+}
+.container .text-container .text:nth-child(4) {
+  opacity: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: upDown 2000ms ease-in-out infinite;
+  animation-delay: calc(0s + (0.1s * 4));
+  z-index: -4;
+}
+.container .text-container .text:nth-child(5) {
+  opacity: 0;
+  left: 52.5%;
+  transform: translate(-50%, -50%);
+  animation: upDown 2000ms ease-in-out infinite;
+  animation-delay: calc(0s + (0.1s * 5));
+  z-index: -5;
+}
+.container .text-container .text:nth-child(6) {
+  opacity: 0;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  animation: upDown 2000ms ease-in-out infinite;
+  animation-delay: calc(0s + (0.1s * 6));
+  z-index: -6;
+}
+.container .text-container .text:nth-child(7) {
+  opacity: 0;
+  left: 57.5%;
+  transform: translate(-50%, -50%);
+  animation: upDown 2000ms ease-in-out infinite;
+  animation-delay: calc(0s + (0.1s * 7));
+  z-index: -7;
+}
+
+@keyframes upDown {
+  0%, 100% {
+    opacity: 1;
+    transform: translate(-50%, -70%);
+  }
+  50% {
+    transform: translate(-50%, -30%);
+  }
+}
+</style>
+</head>
+  
+<div class="container">
+  <div class="text-container">
+    <span class="text">WUNDERLAB</span>
+    <span class="text">WUNDERLAB</span>
+    <span class="text">WUNDERLAB</span>
+    <span class="text">WUNDERLAB</span>
+    <span class="text">WUNDERLAB</span>
+    <span class="text">WUNDERLAB</span>
+    <span class="text">WUNDERLAB</span>
+  </div>
+</div>
+
+<script>
+const textArr = document.querySelectorAll('.text');
+const colorArr = ["#fefefe", "#ff9b00", "#ff3434", "#db38f0", "#0096fb", "#00c500", "#ffd200"];
+
+textArr.forEach((text, index) => {
+	text.style.color = colorArr[index]
+})
+</script>
+
+</body>
+</html>
+
+
