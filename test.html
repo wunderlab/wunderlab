@@ -62,9 +62,9 @@ body {
   font-weight: bold;
   user-select: none;
   pointer-events: none;
+  letter-spacing: 4px;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
   transform: translate(-50%, -50%);
-  opacity: 0;
   animation: upDown 2000ms ease-in-out infinite;
 }
 
@@ -106,16 +106,11 @@ body {
 	
 @keyframes upDown {
   0%, 100% {
-    opacity: 1;
     transform: translate(-50%, -70%);
   }
   50% {
     transform: translate(-50%, -30%);
   }
-}
-
-.container .text-container .text {
-  letter-spacing: 4px;
 }
 </style>
 </head>
