@@ -46,7 +46,7 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  right: 0;
   bottom: 0;
 }
 .container {
@@ -136,6 +136,7 @@ body {
 </div>
 
 <script>
+const overlay = document.querySelector('.overlay');
 const textContainer = document.querySelector('.text-container');
 const textArr = textContainer.querySelectorAll('.text');
 const colorArr = ["#fefefe", "#ff9b00", "#ff3434", "#db38f0", "#0096fb", "#00c500", "#ffd200"];
@@ -143,8 +144,9 @@ const colorArr = ["#fefefe", "#ff9b00", "#ff3434", "#db38f0", "#0096fb", "#00c50
 textArr.forEach((text, index) => {
 	text.style.color = colorArr[index];
 })
-	
-setTimeout(()=>{textContainer.style.zIndex = 1}, 300);
+
+textContainer.style.zIndex = 1;
+setTimeout(()=>{overlay.style.zIndex = -100}, 300);
 </script>
 
 </body>
