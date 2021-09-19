@@ -41,13 +41,15 @@ body {
   overflow: hidden;
 }
 .overlay {
+  opacity: 1;
   z-index: 1000;
   background: #000;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  bottom: 0;
+  height: 100%;
+  transition:opacity 0.9s ease;
 }
 .container {
   position: relative;
@@ -146,8 +148,8 @@ textArr.forEach((text, index) => {
 	text.style.color = colorArr[index];
 })
 
-//textContainer.style.zIndex = 1;
-setTimeout(()=>{overlay.style.width = 0}, 800);
+overlay.opacity = 0;
+//setTimeout(()=>{overlay.style.width = 0}, 800);
 </script>
 
 </body>
