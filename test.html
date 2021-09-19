@@ -116,7 +116,6 @@ body {
 @keyframes upDown {
   0%, 100% {
     transform: translate(-50%, -70%);
-    opacity: 1;
   }
   50% {
     transform: translate(-50%, -30%);
@@ -146,6 +145,7 @@ const colorArr = ["#fefefe", "#ff9b00", "#ff3434", "#db38f0", "#0096fb", "#00c50
 
 textArr.forEach((text, index) => {
 	text.style.color = colorArr[index];
+	text.style.opacity: 1;
 })
 
 //textContainer.style.zIndex = 1;
