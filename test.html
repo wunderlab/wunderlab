@@ -158,7 +158,7 @@ textArr.forEach((text, index) => {
 })
 
 const W = document.body.clientWidth;
-
+if (W < 880) textContainer.style.fontSize = 200*W/880;
 setTimeout(() => { overlay.classList.add('fade-out') }, 800);
 </script>
 
