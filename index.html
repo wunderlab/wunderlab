@@ -10,6 +10,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap">
 <link rel="manifest" href="/site.webmanifest">
 <script>
 if (window.top!==window.self) window.top.location=window.self.location;
@@ -21,6 +22,7 @@ form, label, table, tbody, thead, tr, th, td  {
   padding: 0;
   border: none;
   outline: 0 !important;
+  box-sizing: border-box;
 }
 img
 {
@@ -28,40 +30,142 @@ img
   max-width: 100%;
 }
 html { height:100%; background:#000; }
-body
-{
-  margin: 0;
-  min-height: 100%;
-  display: table;
+
+body {
+  background-color: #000;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.overlay {
+  opacity: 1;
+  z-index: 1000;
+  background: #000;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  text-align: center;
-  font-family: sans-serif;
-  font-size: 20px;
-  line-height: 1.428571429;
-  color: #fff;
-  background: rgb(33,0,47);
-  background: linear-gradient(30deg, rgba(33,0,47,1) 0%, rgba(145,0,181,1) 100%);
+  transition: all 1s linear;
+}
+.overlay.fade-out {
+  opacity: 0;
+}
+.container {
+  position: relative;
+  width: 400px;
+  height: 200px;
+}
+.container .text-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 200px;
+  font-family: "Bebas Neue";
+  letter-spacing: 4px;
+  font-weight: bold;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  z-index: 1;
+}
+.container .text-container .text {
+  position: absolute;
+  top: 50%;
+  user-select: none;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  animation: upDown 2000ms ease-in-out infinite;
 }
 
-a,a:hover{text-decoration:none;}
-
-.box
-{
-  display:table-cell;
-  vertical-align:middle;
+.container .text-container .text:nth-child(1) {
+  left: 42.5%;
+  animation-delay: 0.1s;
+  z-index: -1;
 }
-
+.container .text-container .text:nth-child(2) {
+  left: 45%;
+  animation-delay: 0.2s;
+  z-index: -2;
+}
+.container .text-container .text:nth-child(3) {
+  left: 47.5%;
+  animation-delay: 0.3s;
+  z-index: -3;
+}
+.container .text-container .text:nth-child(4) {
+  left: 50%;
+  animation-delay: 0.4s;
+  z-index: -4;
+}
+.container .text-container .text:nth-child(5) {
+  left: 52.5%;
+  animation-delay: 0.5s;
+  z-index: -5;
+}
+.container .text-container .text:nth-child(6) {
+  left: 55%;
+  animation-delay: 0.6s;
+  z-index: -6;
+}
+.container .text-container .text:nth-child(7) {
+  left: 57.5%;
+  animation-delay: 0.7s;
+  z-index: -7;
+}
+img.txt {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+@keyframes upDown {
+  0%, 100% {
+    transform: translate(-50%, -70%);
+  }
+  50% {
+    transform: translate(-50%, -30%);
+  }
+}
 </style>
 </head>
+  
+<div class="overlay"></div>
+<div class="container">
+  <div class="text-container">
+    <span class="text">WUNDERLAB</span>
+    <span class="text">WUNDERLAB</span>
+    <span class="text">WUNDERLAB</span>
+    <span class="text">WUNDERLAB</span>
+    <span class="text">WUNDERLAB</span>
+    <span class="text">WUNDERLAB</span>
+    <span class="text">WUNDERLAB</span>
+  </div>
+</div>
+<img class="txt" src="/images/txt.png" />
+	
+<script>
+const overlay = document.querySelector('.overlay');
+const textContainer = document.querySelector('.text-container');
+const textArr = textContainer.querySelectorAll('.text');
+const colorArr = ["#fefefe", "#ff9b00", "#ff3434", "#db38f0", "#0096fb", "#00c500", "#ffd200"];
 
-<body class="body">
-	<div class="box">
-	  <img src="/images/wunderlab.png" alt="WunderLab" />
-  </div> 
+textArr.forEach((text, index) => {
+	text.style.color = colorArr[index];
+})
 
+const size = function() {
+  let W = document.body.clientWidth;
+  if (W < 880) textContainer.style.fontSize = (Math.floor(200*W/880) - 20) + 'px';
+}
+size();
+window.onresize = size;
+	
+setTimeout(() => { overlay.classList.add('fade-out') }, 800);
+</script>
 
 </body>
 </html>
-
-
