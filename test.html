@@ -63,6 +63,7 @@ body {
   z-index: 1;
 }
 .container .text-container .text {
+  opacity: 0;
   position: absolute;
   top: 50%;
   font-size: 12rem;
@@ -115,6 +116,7 @@ body {
 @keyframes upDown {
   0%, 100% {
     transform: translate(-50%, -70%);
+    opacity: 1;
   }
   50% {
     transform: translate(-50%, -30%);
@@ -147,7 +149,7 @@ textArr.forEach((text, index) => {
 })
 
 //textContainer.style.zIndex = 1;
-setTimeout(()=>{overlay.style.width = 0}, 800);
+setTimeout(()=>{overlay.style.width = 0}, 0);
 </script>
 
 </body>
