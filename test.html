@@ -40,7 +40,15 @@ body {
   align-items: center;
   overflow: hidden;
 }
-
+.overlay {
+  z-index: 1000;
+  background: #000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  bottom: 0;
+}
 .container {
   position: relative;
   width: 400px;
@@ -114,6 +122,7 @@ body {
 </style>
 </head>
   
+<div class="overlay"></div>
 <div class="container">
   <div class="text-container">
     <span class="text">WUNDERLAB</span>
