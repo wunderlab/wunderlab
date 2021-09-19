@@ -53,7 +53,6 @@ body {
 }
 .overlay.fade-out {
   opacity: 0;
-  transition:opacity 1.2s ease;
 }
 .container {
   position: relative;
@@ -152,7 +151,7 @@ textArr.forEach((text, index) => {
 	text.style.color = colorArr[index];
 })
 
-overlay.classList.add('fade-out');
+overlay.style.opacity = 0;
 //setTimeout(()=>{overlay.classList.add('fade-out')}, 400);
 </script>
 
