@@ -57,7 +57,7 @@ body {
 .container {
   position: relative;
   width: 400px;
-  height: 400px;
+  height: 200px;
 }
 .container .text-container {
   position: absolute;
@@ -116,7 +116,12 @@ body {
   animation-delay: 0.7s;
   z-index: -7;
 }
-	
+img.txt {
+  position: absolute;
+  top: 120%;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
 @keyframes upDown {
   0%, 100% {
     transform: translate(-50%, -70%);
