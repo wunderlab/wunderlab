@@ -52,7 +52,6 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 1;
 }
 .container .text-container .text {
   opacity: 0;
@@ -129,13 +128,15 @@ body {
 </div>
 
 <script>
-const textArr = document.querySelectorAll('.text');
+const textContainer = document.querySelector('.text-container');
+const textArr = textContainer.querySelectorAll('.text');
 const colorArr = ["#fefefe", "#ff9b00", "#ff3434", "#db38f0", "#0096fb", "#00c500", "#ffd200"];
 
 textArr.forEach((text, index) => {
 	text.style.color = colorArr[index];
-	text.style.opacity = 1;
 })
+	
+textContainer.style.zIndex = 1;
 </script>
 
 </body>
