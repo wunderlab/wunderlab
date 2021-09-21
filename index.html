@@ -158,8 +158,11 @@ textArr.forEach((text, index) => {
 })
 
 const size = function() {
-  let W = document.body.clientWidth;
-  if (W < 880) textContainer.style.fontSize = (Math.floor(200*W/880) - 20) + 'px';
+  let W = document.body.clientWidth, 
+      maxSize = 200,
+      fontSize;
+  if (W < 900) fontSize = Math.floor(maxSize*W/900) - 10; else fontSize = maxSize;
+  textContainer.style.fontSize = fontSize + 'px';
 }
 size();
 window.onresize = size;
