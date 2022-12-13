@@ -4,17 +4,11 @@
 <title>WunderLab</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1" />
-<meta name="Author" content="WunderLab" />
-<meta name="Keywords" content="WunderLab" />
 <meta name="Description" content="WunderLab" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap">
-<link rel="manifest" href="/site.webmanifest">
-<script>
-if (window.top!==window.self) window.top.location=window.self.location;
-</script>
 <style>
 html, body, div, span, h1, h2, p, a, img, strong, b, u, i, center, ul, li,
 form, label, table, tbody, thead, tr, th, td  {
@@ -35,9 +29,6 @@ body {
   background-color: #000;
   width: 100%;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   overflow: hidden;
 }
 .overlay {
@@ -49,13 +40,16 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  transition: all 1s linear;
+  transition: all 1s ease-out;
 }
 .overlay.fade-out {
   opacity: 0;
 }
 .container {
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform = translate(-50%, -50%);
   width: 400px;
   height: 200px;
 }
